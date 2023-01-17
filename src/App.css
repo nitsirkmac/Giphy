@@ -3,3 +3,7 @@
 }
 
 /* GRID ONLY */
+.display {
+  display: block;
+  margin: auto;
+}

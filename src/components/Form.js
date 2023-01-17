@@ -1,12 +1,11 @@
 
 
-const Form = () => {
-    
+const Form = ({ getGiphy }) => {
+
+
     return (
         <div>
-            <h1>Get a Giphy</h1>
-            <h2>Powered By Giphy</h2>
-            <input type='submit' value='RANDOM' />
+            <button onClick={getGiphy}>Random Giphy</button>
         </div>
     )
 }

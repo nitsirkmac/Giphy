@@ -1,15 +1,26 @@
 import './App.css';
-import Form from './components/Form';
+import { useState } from 'react'
+import Nav from './components/Nav'
+import Form from './components/Form'
+import RandoDisplay from './components/RandoDisplay'
+
+// VDaJ4yaVbewr0XMMnChSGncckjXZT6Ds
 
 function App() {
-  
+  const [ randoGiphy, setRandoGiphy ] = useState({})
 
-
+  const getGiphy = async () => {
+    const URL = 'https://api.giphy.com/v1/randomid?api_key=VDaJ4yaVbewr0XMMnChSGncckjXZT6Ds' 
+    const res = await fetch(URL)
+    const json = await res.json()
+    setRandoGiphy(json)
+  }
 
   return (
     <div className="App">
-      <h1>Scramble the Giphy</h1>
-      <Form />
+      <Nav />
+      <Form getGiphy={getGiphy} />
+      <RandoDisplay gif={randoGiphy} />
     </div>
   );
 }
