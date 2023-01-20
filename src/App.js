@@ -10,11 +10,13 @@ function App() {
   const [ randoGiphy, setRandoGiphy ] = useState({})
 
   const getGiphy = async () => {
-    const URL = 'https://api.giphy.com/v1/randomid?api_key=VDaJ4yaVbewr0XMMnChSGncckjXZT6Ds' 
+    const URL = 'https://api.giphy.com/v1/gifs/random?api_key=VDaJ4yaVbewr0XMMnChSGncckjXZT6Ds' 
     const res = await fetch(URL)
     const json = await res.json()
     setRandoGiphy(json)
   }
+
+console.log(randoGiphy)
 
   return (
     <div className="App">
